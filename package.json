@@ -7,9 +7,9 @@
     "lint": "npm run eslint && npm run suit",
     "eslint": "eslint .",
     "suit": "node scripts/suit-conformance",
-    "start": "DEBUG=*,-babel node . & node server.js",
+    "start": "export PORT=4000 && DEBUG=*,-babel node . & node server.js",
     "test": "jest",
-    "build": "node ./scripts/build && node dist/main.js"
+    "build": "node ./scripts/build && node ./dist/main.js"
   },
   "dependencies": {
     "es6-promise": "^2.1.0",

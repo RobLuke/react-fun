@@ -1,0 +1,41 @@
+@import '../../../handlers/Base/sass/vendors/all';
+@import '../../../handlers/Base/sass/utils/all';
+
+.BlogStory-image {
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-bottom: 60%;
+  margin-bottom: 48px;
+  overflow: hidden;
+  @include border-radius(5px);
+  img {
+    position: absolute;
+    max-width: 120%;
+    margin-left: -10%;
+  }
+}
+.BlogStory-header {
+  margin-bottom: 16px;
+}
+.BlogStory-details {
+  @include clearfix();
+  margin-bottom: 24px;
+  h3.h3 {
+    display: inline-block;
+    float: left;
+    margin-right: 4px;
+  }
+  .BlogStory-detail-tag {
+    color: #EB4A2C;
+  }
+}
+.BlogStory-content {
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+.BlogStory-button {
+  .Button {
+    margin-left: 0;
+  }
+}

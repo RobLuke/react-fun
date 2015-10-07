@@ -1,0 +1,15 @@
+@import '../../../handlers/Base/sass/vendors/all';
+@import '../../../handlers/Base/sass/utils/all';
+
+.BlogList {
+  max-width: 600px;
+  margin: 72px auto 24px;
+  @include padded();
+  @include clearfix();
+  .BlogStory {
+    margin-bottom: 112px;
+  }
+  @include breakpoint($mobile) {
+    margin-top: 32px;
+  }
+}

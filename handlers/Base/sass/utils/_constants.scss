@@ -1,0 +1,29 @@
+$nav-height: 80px;
+$nav-height-sm: 50px;
+$link-height: 60px;
+
+$subMenu: rgba(255,255,255,0.96);
+
+@mixin max-width($width: 948px) {
+    max-width: $width;
+    margin: 0 auto;
+}
+@mixin padded($a: 0, $b: 24px) {
+    padding: $a $b;
+    @include breakpoint($mobile) {
+        padding: $a ($b / 3) * 2;
+    }
+}
+
+
+$susy: (
+    math: fluid,
+    container: auto,
+    gutter-position: split,
+    columns: 12,
+    gutters: 0,
+    column-width: false,
+    last-flow: to,
+);
+
+$gutter: gutter(0);

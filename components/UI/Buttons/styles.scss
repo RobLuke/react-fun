@@ -1,0 +1,31 @@
+@import '../../../handlers/Base/sass/vendors/all';
+@import '../../../handlers/Base/sass/utils/all';
+
+.Button {
+  display: inline-block;
+  outline: none;
+  min-width: 140px;
+  height: 40px;
+  line-height: 39px;
+  padding: 0 8px;
+  margin: 0 8px;
+  background: rgba(0,0,0,0.0);
+  @include border-radius(30px);
+  @include font-size(1.4);
+  font-weight: 500;
+  color: white;
+  border: 1px solid white;
+  transition: background 170ms ease-in-out, color 150ms ease-in-out;
+  &:hover {
+    background: white;
+    color: #FFB300;
+  }
+  &.red {
+    border-color: #DD2D24;
+    color: #DD2D24;
+    &:hover {
+      background: #DD2D24;
+      color: white;
+    }
+  }
+}

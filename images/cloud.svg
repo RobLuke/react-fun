@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="82px" height="82px" viewBox="0 0 82 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>cloud</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="31.4582888%" y1="0%" x2="62.6016956%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFD36C" offset="0%"></stop>
+            <stop stop-color="#FF9E00" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="cloud" sketch:type="MSArtboardGroup" stroke="url(#linearGradient-1)" stroke-width="2" fill="#FFFFFF" fill-opacity="0">
+            <path d="M81,52.5714286 C81,48.1361782 78.0018168,44.4161967 73.9626904,43.410665 C73.7514991,33.5554387 65.8639895,25.6326531 56.1648352,25.6326531 C55.1317506,25.6326531 54.1192192,25.722537 53.1343276,25.8950661 C49.1833644,21.0694457 43.2448137,18 36.6043956,18 C26.831706,18 18.5791875,24.6480965 15.9451275,33.7581816 C15.5825491,33.7291008 15.2160453,33.7142857 14.8461538,33.7142857 C7.19913423,33.7142857 1,40.0462585 1,47.8571429 C1,55.4422628 6.84595587,61.6327281 14.1868132,61.9842474 L73.0879121,62 C77.561267,61.2509424 81,57.3213703 81,52.5714286 Z" id="Oval-27-Copy" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,58 @@
+@import '../../handlers/Base/sass/vendors/all';
+@import '../../handlers/Base/sass/utils/all';
+
+.Quotes {
+}
+.Quote {
+  display: inline-block;
+  float: left;
+  width: percentage(1/3);
+  padding-bottom: 56px;
+  height: 280px;
+  @include breakpoint($portable) {
+    width: percentage(1/2);
+    height: 360px;
+  }
+  @include breakpoint($mobile) {
+    width: 100%;
+    height: auto;
+  }
+}
+.Quote-image {
+  @include square(50px);
+  @include circle();
+  background: #FAFBFC;
+  border: 1px solid #EBEFF2;
+  float: left;
+}
+.Quote-content {
+  margin-left: 64px;
+  padding-right: 40px;
+}
+.Quote-content-name {
+  @include font-size(1.3);
+  text-transform: uppercase;
+  padding: 6px 0 2px;
+}
+.Quote-content-title {
+  @include font-size(1.2);
+  font-weight: 300;
+  padding-bottom: 16px;
+}
+.Quote-content-text {
+  @include font-size(1.2);
+  color: #4F6780;
+  &:before,
+  &:after {
+    content: '"';
+    margin-right: 2px;
+    font-size: 20px;
+    font-weight: 900;
+    color: #F99A00;
+    position: relative;
+    top: 4px;
+  }
+  &:after {
+    margin-left: 2px;
+  }
+}

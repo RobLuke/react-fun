@@ -1,0 +1,25 @@
+@import '../../handlers/Base/sass/vendors/all';
+@import '../../handlers/Base/sass/utils/all';
+
+.Footer {
+  margin-top: 72px;
+  background-color: #33495F;
+  @include breakpoint($mobile) {
+    margin-top: -24px;
+  }
+}
+.Footer-container {
+  min-height: 500px;
+  max-width: 948px;
+  @include padded();
+  @include clearfix();
+}
+.Footer-legal {
+  height: 60px;
+  background-color: #2B3D51;
+}
+.Footer-legal-container {
+  max-width: 948px;
+  @include padded();
+  @include clearfix();
+}

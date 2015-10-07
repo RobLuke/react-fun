@@ -1,0 +1,84 @@
+@import '../../handlers/Base/sass/vendors/all';
+@import '../../handlers/Base/sass/utils/all';
+
+.Hero {
+    position: relative;
+    background-color: #bbb;
+    color: white;
+    padding: 112px 0 50px;
+    @include breakpoint($portable) {
+      height: auto;
+      .Hero-callout {
+        float: none;
+        .Hero-callout-image {
+          float: left;
+          width: 50%;
+          position: relative;
+          top: 4px;
+        }
+        .Hero-callout-text {
+          margin-top: 0px;
+          float: right;
+        }
+        .Hero-callout-button {
+          margin-left: 32px;
+          margin-bottom: 48px;
+        }
+      }
+      .Hero-image {
+        float: none;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+    .Hero-text {
+      max-width: 600px;
+      margin: 0 auto;
+      @include padded();
+    }
+    .heroTitle,
+    .heroSubtitle {
+      color: white;
+      padding-right: 200px;
+      @include breakpoint($mobile) {
+        padding-right: 0;
+      }
+    }
+    .heroTitle {
+      @include font-size(3.6);
+      padding-bottom: 8px;
+    }
+    .heroSubtitle {
+    }
+}
+.Hero-container {
+  max-width: 948px;
+  margin: 0 auto;
+  padding: 0 24px;
+  @include clearfix();
+  position: relative;
+}
+.Hero-callout {
+  float: left;
+  margin-top: 32px;
+  z-index: 2;
+}
+.Hero-callout-text {
+  width: 220px;
+  margin-top: -64px;
+  text-align: left;
+  color: white;
+  font-size: 24px;
+  line-height: 1.3em;
+  font-weight: 500;
+}
+.Hero-callout-button {
+  width: 160px;
+  margin-top: 48px;
+  margin-left: 0;
+}
+.Hero-image {
+  float: right;
+  margin-right: -24px;
+}

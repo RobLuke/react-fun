@@ -1,0 +1,31 @@
+@import '../../../handlers/Base/sass/vendors/all';
+@import '../../../handlers/Base/sass/utils/all';
+
+
+.BubbleContainer {
+  margin-top: -80px;
+  .Bubble:first-child {
+    .Bubble-image,
+    .Bubble-text {
+      margin-left: 30px;
+    }
+    @include breakpoint($portable) {
+      .Bubble-image,
+      .Bubble-text {
+        margin-left: auto;
+      }
+    }
+  }
+  .Bubble:last-child {
+    .Bubble-image,
+    .Bubble-text {
+      margin-right: 30px;
+    }
+    @include breakpoint($portable) {
+      .Bubble-image,
+      .Bubble-text {
+        margin-right: auto;
+      }
+    }
+  }
+}

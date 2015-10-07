@@ -1,0 +1,350 @@
+@import '../../handlers/Base/sass/vendors/all';
+@import '../../handlers/Base/sass/utils/all';
+
+$nav-height: 64px;
+$nav-height-sm: 50px;
+$link-height: 60px;
+
+$subMenu: rgba(255,255,255,0.96);
+
+.nav {
+    height: $nav-height;
+    @include fixed(0,0,null,0);
+    @include clearfix();
+    background-color: #FF9E00;
+    z-index: 999;
+    .nav-container {
+        @include max-width;
+        position: relative;
+    }
+    .nav-logo {
+        height: $nav-height;
+        @include padded();
+        @include font-size(1.8);
+        font-weight: 300;
+        line-height: $nav-height - 1;
+        color: white;
+        .light {
+            font-weight: 700;
+            margin-left: 2px;
+        }
+    }
+    .nav-links {
+        @include absolute(0,0,null,null);
+        @include padded();
+    }
+
+
+    .nav-link {
+        height: $nav-height;
+        position: relative;
+        display: inline-block;
+        float: left;
+        @include padded();
+        color: $links;
+        line-height: $nav-height - 1;
+        cursor: pointer;
+        a {
+            display: block;
+            @include square(100%);
+        }
+        &:after {
+            content: '';
+            display: block;
+            @include square(0);
+            @include absolute(null,0,10px,0);
+            margin: 0 auto;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            
+            border-bottom: 8px solid $subMenu;
+            @include translate3d(0, 20px, 0);
+            @include opacity(0);
+        }
+        .nav-login {
+            &:before {
+                content: '';
+                display: block;
+                @include size(100%, 28px);
+                @include absolute(0,0,0,0);
+                margin: auto;
+                border: 1px solid white;
+                @include border-radius(30px);
+                z-index: -9;
+                @include breakpoint($portable) {
+                    display: none;
+                }
+            }
+        }
+        .nav-sublinks {
+            z-index: -99;
+            display: none;
+        }
+        @include breakpoint($hover-zone) { 
+            &:hover {
+                color: rgba(0,0,0,0.4);
+                &:after {
+                    @include translate3d(0, 0, 0);
+                    @include opacity(1);
+                    @include transition(transform 130ms ease-in-out, opacity 200ms ease-in-out);
+                    z-index: 99;
+                }
+                .nav-sublinks {
+                    display: block;
+                    @include translate3d(0, 0, 0);
+                    @include opacity(1);
+                    @include animate(lift 130ms ease-in-out);
+                    z-index: 98;
+                }
+            }
+            &.link:hover {
+                a {
+                    color: rgba(0,0,0,0.4);
+                }
+                &:after {
+                    content: none;
+                }
+                .nav-login {
+                    color: #91BB85;
+                    &:before {
+                        background-color: white;
+                        border: 1px solid white;
+                    }
+                }
+            }
+        }
+        &:nth-last-child(2),
+        &:nth-last-child(1) {
+            .nav-sublinks {
+                right: 0;
+                left: auto;
+            }
+        }
+        &:nth-last-child(1) {
+            //margin-left: 16px;
+            padding-right: 0;
+        }
+    }
+
+    .nav-sublinks {
+        @include size(160px, auto);
+        @include absolute($nav-height - 10,null,null,0);
+        background: $subMenu;
+        @include border-radius(5px);
+        @include drop-shadow();
+        padding: 12px 0;
+        @include translate3d(0, 20px, 0);
+        @include opacity(0);
+        @include transition(transform 100ms ease-out, opacity 100ms ease-out);
+        .nav-sublink {
+            height: auto;
+            line-height: 1em;
+            a {
+                display: block;
+                color: $text;
+                @include square(100%);
+                @include padded(16px, 24px);
+            }
+            @include breakpoint($hover-zone) { 
+                &:hover {
+                    background: rgba(0,0,0,0.05);
+                    color: rgba(0,0,0,0.8);
+                }
+            }
+        }
+    }
+}
+@include breakpoint($portable) {
+    .nav {
+        height: $link-height;
+        bottom: 0;
+        border-bottom: none;
+        @include clearfix();
+        .burger {
+            @include square(48px);
+            @include fixed(6px,null,null,8px);
+            padding: 12px;
+            // background-image: url(../images/ui_icons/burger.svg);
+            background-color: red;
+            background-position: 12px 12px;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            z-index: 999;
+        }
+        .nav-logo {
+            display: block;
+            position: relative;
+            text-align: center;
+            line-height: $link-height;
+            z-index: 9;
+        }
+        .nav-links {
+            display: none;
+            background: rgba(white, 0.98);
+            @include fixed(0,-20px,-80px,-20px);
+            z-index: 8;
+            &.is-active {
+                display: block;
+                @include animate(fall 280ms ease-in-out);
+                @include origin(50%, 10%);
+            }
+            &.not-active {
+                display: block;
+                @include animate(rise 220ms ease-in);
+                @include origin(50%, 10%);
+                @include opacity(0);
+            }
+        }
+        .nav-link {
+            height: $link-height !important;
+            line-height: $link-height - 1 !important;
+            @include absolute(0,0,null,0);
+            float: none;
+            display: block;
+            border-bottom: 1px solid rgba(255,255,255, 0.2);
+            font-size: 20px;
+            color: $text;
+            text-align: left;
+            margin: 0 20px;
+            &:before {
+                content: '+';
+                font-size: 28px;
+                color: $text;
+                font-weight: 900;
+                @include absolute(0,16px,0,null);
+                margin: auto 0;
+                @include origin(55%, 55%);
+                @include transition(color 150ms ease-out, transform 550ms cubic-bezier(0.175, 0.885, 0.32, 1.250) 100ms);
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+            &.link:before {
+                content: none;
+            }
+            @for $i from 1 through 10 {
+                &:nth-child(#{$i}) {
+                    top: $link-height * $i;
+                }
+            }
+            &.is-active {
+                background: white;
+                z-index: 9;
+                &:before {
+                    @include rotateZ(45deg);
+                    color: red;
+                }
+                @for $i from 1 through 10 {
+                    &:nth-child(#{$i}) {
+                        @include translate3d(0, -($link-height * $i - $link-height), 0);
+                        @include animate(up#{$i} 500ms cubic-bezier(0.175, 0.885, 0.32, 1.150));
+                    }
+                    @include keyframes(up#{$i}) {
+                        0% {
+                            @include translate3d(0, 0, 0);
+                            background: white;
+                        }
+                        100% {
+                            @include translate3d(0, -($link-height * $i - $link-height), 0);
+                            background: white;
+                        }
+                    }
+                }
+                .nav-sublinks {
+                    display: block;
+                    @include size(100%, 1000px);
+                    @include fixed($link-height,0,0,0);
+                    border: none;
+                    padding: 0;
+                    background: white;
+                    font-size: 18px;
+                    @include drop-shadow(0,0,0,0);
+                    @include border-radius(0);
+                    @include animate(fall 400ms cubic-bezier(0.175, 0.885, 0.32, 1.050) 40ms);
+                    @include origin(6%, 0%);
+                    @include delay-fix();
+                }
+            }
+            &.link.is-active {
+                background: none;
+                @include translate3d(0, 0, 0);
+                @include animate(none);
+            }
+            &.not-active {
+                @for $i from 1 through 10 {
+                    &:nth-child(#{$i}) {
+                        @include transition(color 400ms ease-out);
+                        @include translate3d(0, 0, 0);
+                        @include animate(down#{$i} 300ms ease);
+                    }
+                    @include keyframes(down#{$i}) {
+                        0% {
+                            @include translate3d(0, -($link-height * $i - $link-height), 0);
+                        }
+                        100% {
+                            @include translate3d(0, 0, 0);
+                        }
+                    }
+                }
+                .nav-sublinks {
+                    display: block;
+                    @include size(100%, 1000px);
+                    @include fixed($link-height,0,0,0);
+                    border: none;
+                    padding: 0;
+                    background: white;
+                    @include animate(rise 180ms ease);
+                    @include origin(6%, 0%);
+                    @include opacity(0);
+                }
+            }
+            &.link.not-active {
+                @include translate3d(0, 0, 0);
+                @include animate(none);
+            }
+        }
+    }
+}
+
+
+
+@include keyframes(lift) {
+    0% {
+        @include opacity(0);
+        @include translate3d(0, 20px, 0);
+    }
+    100% {
+        @include opacity(1);
+        @include translate3d(0, 0, 0);
+    }
+}
+@include keyframes(fall) {
+    0% {
+        @include opacity(0);
+        @include scale(3);
+    }
+    100% {
+        @include opacity(1);
+        @include scale(1);
+    }
+}
+@include keyframes(rise) {
+    0% {
+        @include opacity(1);
+        @include scale(1);
+    }
+    100% {
+        @include opacity(0);
+        @include scale(2);
+    }
+}
+@include keyframes(shrink) {
+    0% {
+        @include opacity(1);
+        @include scale(1);
+    }
+    100% {
+        @include opacity(0);
+        @include scale(0);
+    }
+}

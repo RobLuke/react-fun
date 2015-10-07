@@ -1,0 +1,23 @@
+// Pallette 
+$primary-color: #6DC0D7;  //blue
+$primary-color-14: adjust-hue(desaturate(darken($primary-color, 14%), 6%), -.03deg);
+
+$second-color: #8BD173;  //green
+$second-color-14: adjust-hue(desaturate(darken($second-color, 14%), 6%), -.03deg);
+
+$third-color: #F7E39F;  //yellow
+$third-color-14: adjust-hue(desaturate(darken($third-color, 10%), 6%), -.03deg);
+
+$fourth-color: #C1CBCD;  //grey
+$fourth-color-14: darken(#C1CBCD, 15%);
+
+$fifth-color: #34495E; //dark-grey
+
+$off-white: #fafafa;
+
+// Text
+$text: $fifth-color;
+$links: white;
+
+//Border Colors
+$border-color: $fourth-color;

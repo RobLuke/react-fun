@@ -1,0 +1,42 @@
+@import '../../handlers/Base/sass/utils/all';
+
+.Sidebar {
+    @include size(300px, 100%);
+    @include absolute(0,-300px,0,null);
+    background-color: #eee;
+    &.is-open {
+        @include translate3d(-300px, 0, 0);
+        @include animate(open 250ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    }
+    &.is-closed {
+        @include translate3d(0, 0, 0);
+        @include animate(close 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19));
+    }
+}
+
+@include keyframes(open) {
+    0% {
+        @include translate3d(0, 0, 0);
+    }
+    100% {
+        @include translate3d(-300px, 0, 0);
+    }
+}
+@include keyframes(close) {
+    0% {
+        @include translate3d(-300px, 0, 0);
+    }
+    100% {
+        @include translate3d(0, 0, 0);
+    }
+}
+.Sidebar-link {
+    display: block;
+    padding: 8px;
+    color: #666;
+    text-decoration: none;
+}
+.Sidebar-link.active {
+    color: pink;
+}
+

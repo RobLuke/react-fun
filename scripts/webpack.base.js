@@ -76,6 +76,7 @@ module.exports = function(options) {
         'node_modules',
         'components',
         '../components',
+        'lib',
       ],
     },
 

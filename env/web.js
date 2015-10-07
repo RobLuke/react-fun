@@ -20,4 +20,3 @@ Router.run(routes, Router.HistoryLocation, function(Handler) {
     tmp.parentNode.removeChild(tmp);
   }
 })();
-
